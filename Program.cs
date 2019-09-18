@@ -6,7 +6,7 @@ namespace c_
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! I am yzy,this is from Alien");
+            Console.WriteLine("Hello World! I am yzy,this is from surface");
             //控制台 dotnet run跑程序
         }
     }

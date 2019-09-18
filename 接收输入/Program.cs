@@ -13,8 +13,8 @@ namespace 接收输入
             Console.WriteLine("Hi "+name);
             */
 
-            string[] arr_name=new string[5];
-            int[] score=new int[5];
+            string[] arr_name=new string[2];
+            int[] score=new int[2];
             for(int i=0;i<arr_name.Length;i++){
                 Console.Write("plz type No"+(i+1)+"of Student's name ");
                 arr_name[i]=Console.ReadLine();

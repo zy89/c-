@@ -18,7 +18,12 @@ namespace 继承
              }
          }
          //狗狗继承于Pet
-         public class Dog:Pet{}
+         public class Dog:Pet{
+             //屏蔽方法用new关键字
+             new public void PrintName(){
+                 Console.WriteLine("new method of dog name is "+Name);
+             }
+         }
          public class Cat:Pet{}
 
     class Program

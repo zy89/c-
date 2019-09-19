@@ -1,3 +1,9 @@
 .vscode
 obj
 bin
+*.dtbcache
+*.suo
+*.lock
+*.ide
+*.user
+*.csproj

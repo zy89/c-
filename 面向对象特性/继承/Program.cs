@@ -33,6 +33,10 @@ namespace 继承
             Dog dog=new Dog();//实例化一只狗
             dog.Name="Jack";
             dog.PrintName();
+            Pet dog2=new Dog();//用基类的引用去调用方法的时候，得到的是基类的方法
+            dog2.Name="buding";
+            dog2.PrintName();
+
             Cat cat=new Cat();//实例化一只猫
             cat.Name="Tom";
             cat.PrintName();//调用print方法

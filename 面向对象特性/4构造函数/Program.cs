@@ -3,7 +3,8 @@
 派生类及构造函数调用顺序：1.子类实例化 2.父类构造函数 3.子类构造函数
  */
 namespace 构造函数
-{public class Pet{
+{
+    public class Pet{
         //初始化过程放在基类里
         public Pet(string name){
             _name=name;

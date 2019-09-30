@@ -31,6 +31,10 @@ namespace 自定义转换
         public override void Speak(){
             Console.WriteLine(Name+" is speaking "+"meow meow");
         }
+        //显式转换
+        public static explicit operator Dog(Cat cat){
+            return new Dog(cat.Name);
+        }
     }
 
     //静态类
@@ -43,6 +47,9 @@ namespace 自定义转换
             Cat cat=dog;//隐式转换
             cat.Speak();//Jack is speaking meow meow.狗转换成猫
             cat.PrintName();//Pet's name is Jack
+
+            Dog dog2=(Dog)cat;//显式，强制
+            dog2.Speak();
 
         }
     }

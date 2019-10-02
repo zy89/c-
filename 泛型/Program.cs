@@ -4,6 +4,9 @@
 但是类型台宽泛，需要显示转换类型，并且判断真实类型是什么。
 2.优势：代码量小，无论多少种笼子，只需要一个实现。且纸游需要的类型才会被实例化。易于维护，修改模板就能改所有实例
  */
+ /* 
+ 泛型方法：方法的模型，可以实例化出具体方法。普通类中也可以有泛型方法
+ */
 namespace 泛型
 {
     public class Pet{
@@ -17,21 +20,25 @@ namespace 泛型
         }
     }
         public class Dog:Pet{
-        public Dog(string name){
-            Name=name;
+            public Dog(string name){
+                Name=name;
+            }
+            public override void Speak(){
+                Console.WriteLine(Name+" is speaking "+"wow wow");
+            }
+            //泛型方法
+            public void isHappy<T>(T target){
+                Console.WriteLine("Happy:"+target.ToString());
+            }
         }
-        public override void Speak(){
-            Console.WriteLine(Name+" is speaking "+"wow wow");
-        }
-    }
         public class Cat:Pet{
-        public Cat(string name){
-            Name=name;
+            public Cat(string name){
+                Name=name;
+            }
+            public override void Speak(){
+                Console.WriteLine(Name+" is speaking "+"meow meow");
+            }
         }
-        public override void Speak(){
-            Console.WriteLine(Name+" is speaking "+"meow meow");
-        }
-    }
     public class Cage<T>{
         //T只是形参
         T[] array;
@@ -61,10 +68,15 @@ namespace 泛型
             }
         }
     }
+    class Person{}
     class Program
     {
         static void Main(string[] args)
         {
+            var dog = new Dog("buding");
+            dog.isHappy<Person>(new Person());
+            dog.isHappy<int>(3);
+            /* 
             var dogCage = new Cage<Dog>(1);//定义一个size为1的笼子
             dogCage.Putin(new Dog("A"));//放入A狗
             dogCage.Putin(new Dog("B"));//放入B狗, 会输出cage is full
@@ -79,6 +91,7 @@ namespace 泛型
 
             var cat= catCage.TakeOut();
             cat.PrintName();
+            */
         }
     }
 }

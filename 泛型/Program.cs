@@ -109,7 +109,7 @@ namespace 泛型
             Labrador dog= new Labrador("A");
             dog.Act(new SitDogCmd());//sit
             dog.Act(new SpeakDogCmd());//wow,想学什么只要更改泛型实参，让拉布拉多继承就可以了
-        
+            Console.WriteLine("你好");
 
             /* 
             var dog = new Dog("buding");

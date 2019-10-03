@@ -80,15 +80,12 @@ namespace 泛型
             var dogCage = new Cage<Dog>(1);//定义一个size为1的笼子
             dogCage.Putin(new Dog("A"));//放入A狗
             dogCage.Putin(new Dog("B"));//放入B狗, 会输出cage is full
-
             var dog = dogCage.TakeOut();
             dog.PrintName();//是A
-
             //再来个猫的,很方便
             var catCage = new Cage<Cat>(1);
             catCage.Putin(new Cat("C"));
             catCage.Putin(new Cat("D"));
-
             var cat= catCage.TakeOut();
             cat.PrintName();
             */

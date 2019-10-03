@@ -2,6 +2,8 @@
 using System.Collections.Generic;//使用集合
 /*
 1. ArrayList:可以不指定大小；存取比数组慢；长度用Count访问
+2. Dictionary：储存是一系列的键值对，一一对应。可以通过键高效访问到值
+3. 栈stack：先进后出
  */
 namespace 集合
 {
@@ -35,6 +37,22 @@ namespace 集合
             for(int i =0;i<list.Count;++i){
                 list[i].PrintName();
             }
+
+            //字典
+            Dictionary<string,Dog> dic= new Dictionary<string, Dog>();
+            dic.Add("A", new Dog("AA"));//A是键,AA是值
+            dic.Add("B", new Dog("BB"));
+            dic.Add("C", new Dog("CC"));
+
+            dic["A"].PrintName();//通过键高效访问A的值
+
+            //栈stack
+            Stack<Dog> s = new Stack<Dog>();
+            s.Push(new Dog("A"));//Push用来入栈
+            s.Push(new Dog("B"));
+            s.Peek().PrintName();//Peek查看栈顶元素，不会拿出
+            s.Pop();//出栈,B移除
+            s.Peek().PrintName();
         }
     }
 }

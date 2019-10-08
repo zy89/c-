@@ -37,11 +37,11 @@ namespace 构造方法
         public void PlayBall(){
             Console.WriteLine("Hi! I can play soccer");
         }
-        /* 
+        
         public Child(){//无参构造方法
             Name = "JayChou";
         }
-        */
+        
         public Child(string name, string sex, int age){//有参构造方法。会重写上一个Child,调用没问题
             Name=name;
             Age=age;
@@ -54,13 +54,18 @@ namespace 构造方法
     {
         static void Main(string[] args)
         {
-            //Child child = new Child();//调用构造方法,无参。赋值麻烦
             Child child = new Child("JJ","female",5);//调用有参构造方法，直接传入参数。节约代码量
-
-
             Console.WriteLine("My name is {0}", child.Name);//Name是在类里完成赋值
             Console.WriteLine("My gender is {0}", child.Sex);
             Console.WriteLine("My age is {0}", child.Age);
+
+            Child child2 = new Child();//调用构造方法,无参。赋值麻烦
+            Console.WriteLine("My 2 name is {0}", child2.Name);
+
+            //对象初始化器。必须要有无参的构造方法才能使用对象初始化器
+            Child child3 = new Child(){Name="David", Age=5};
+            Console.WriteLine("My 3 name is {0}", child3.Name);
+            Console.WriteLine("My 3 age is {0}", child3.Age);
         }
     }
 }

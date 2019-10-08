@@ -14,10 +14,10 @@ namespace 构造方法
             get {return _name;}
             set {_name = value;}
         }
-        private string _sex;
+        private string _sex="male";
         public string Sex{
             get{return _sex;}
-            set{_sex=value;}
+            //set{_sex=value;}
         }
         private int _age;
         public int Age{
@@ -33,18 +33,21 @@ namespace 构造方法
             get{return _height;}
             set{_height=value;}
         }
-
+        
         public void PlayBall(){
             Console.WriteLine("Hi! I can play soccer");
         }
-
+        /* 
         public Child(){//无参构造方法
             Name = "JayChou";
         }
+        */
         public Child(string name, string sex, int age){//有参构造方法。会重写上一个Child,调用没问题
             Name=name;
             Age=age;
-            Sex=sex;
+            this._sex=sex;//this表示当前对象的sex字段。后面的sex代表形参
+            //有了this作前缀，类的成员和方法的参数就不会弄混
+            //此时就会接收Child()里赋值的sex，而不是类的自身的sex
         }
     }
     class Program
@@ -52,7 +55,7 @@ namespace 构造方法
         static void Main(string[] args)
         {
             //Child child = new Child();//调用构造方法,无参。赋值麻烦
-            Child child = new Child("JJ","male",27);//调用有参构造方法，直接传入参数。节约代码量
+            Child child = new Child("JJ","female",5);//调用有参构造方法，直接传入参数。节约代码量
 
 
             Console.WriteLine("My name is {0}", child.Name);//Name是在类里完成赋值
